@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday YES</title>
+    <style>
+        body {
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .feralFriday {
+            font-size: 8rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            font-family: 'Segoe UI', 'Arial', 'Helvetica', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="feralFriday" id="result">YES</div>
+    <script>
+        const randomHue = Math.floor(Math.random() * 360);
+        const lightness = 35;
+        document.body.style.background = `hsl(${randomHue}, 100%, ${lightness}%)`;
+        document.getElementById('result').textContent = new Date().getDay() === 5 ? 'YES' : 'NO';
+    </script>
+</body>
+</html>
