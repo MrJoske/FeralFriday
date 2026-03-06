@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feral Friday</title>
+    <title></title>
     <style>
         body {
             color: #fff;
@@ -19,11 +19,24 @@
             letter-spacing: 0.2em;
             font-family: 'Segoe UI', 'Arial', 'Helvetica', sans-serif;
         }
+        .subtitle {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-top: 2rem;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="feralFriday" id="result">YES</div>
+    <div class="subtitle" id="subtitle"></div>
     <script>
+        const hostname = window.location.hostname;
+        let pageTitle = 'Feral Friday';
+        if (hostname.includes('isitfarchfriday.com')) {
+            pageTitle = 'FARCH Friday';
+        }
+        document.title = pageTitle;
         const randomHue = Math.floor(Math.random() * 360);
         const lightness = 35;
         document.body.style.background = `hsl(${randomHue}, 100%, ${lightness}%)`;
